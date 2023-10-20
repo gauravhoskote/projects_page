@@ -7,13 +7,13 @@ st.set_page_config(
 
 st.write("# Welcome to my Projects Page! 👋")
 
-st.sidebar.success("Projects will be uploaded soon.")
+st.sidebar.success("Select one of the above options.")
 
 st.markdown(
     """
-    This website is down for maintenance.
-    I will be uploading my projects on this page soon.
-    Until then, you can take a look at my work experience and read a little bit about the projects I have worked on my [portfolio](https://gauravhoskote.github.io/). 
+    Hello everyone, you can take a look at my projects by clicking on one of the options available on the sidebar.
+    I will be working on uploading as many projects as I can.
+    You can also take a look at my portfolio [here](https://gauravhoskote.github.io/). 
 """
 )
 
