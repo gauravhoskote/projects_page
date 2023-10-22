@@ -141,20 +141,20 @@ st.button('Suggest movies!', on_click=generate_recommendations)
 
 
 if 'final_df' in st.session_state and st.session_state['final_df'] is not None:
-	st.write(st.session_state['final_df'])
-	# for i in range(len(st.session_state['final_df'])):
-	# 	try:
-	# 		title = st.session_state['final_df'].iloc[i]['title']
-	# 		genres = st.session_state['final_df'].iloc[i]['genres'].replace('|', ' ')
-	# 		mov_id = st.session_state['final_df'].iloc[i]['movieId']
-	# 		imdb_id = st.session_state['links_df'].loc[st.session_state['links_df']['movieId'] == mov_id+1].iloc[0]['imdbId']
-	# 		st.markdown("""---""")
-	# 		st.image(
-	#             str(ia.get_movie(imdb_id)['cover']),
-	#             width=100, # Manually Adjust the width of the image as per requirement
-	#         )
-	# 		st.write("Title: " +title)
-	# 		st.write("Genres: " + genres)
-	# 		st.markdown("""---""")
-	# 	except:
-	# 		print('Could not fetch movie')
+	# st.write(st.session_state['final_df'])
+	for i in range(len(st.session_state['final_df'])):
+		try:
+			title = st.session_state['final_df'].iloc[i]['title']
+			genres = st.session_state['final_df'].iloc[i]['genres'].replace('|', ' ')
+			mov_id = st.session_state['final_df'].iloc[i]['movieId']
+			imdb_id = st.session_state['links_df'].loc[st.session_state['links_df']['movieId'] == mov_id+1].iloc[0]['imdbId']
+			st.markdown("""---""")
+			st.image(
+	            str(ia.get_movie(imdb_id)['cover']),
+	            width=100, # Manually Adjust the width of the image as per requirement
+	        )
+			st.write("Title: " +title)
+			st.write("Genres: " + genres)
+			st.markdown("""---""")
+		except:
+			print('Could not fetch movie')
